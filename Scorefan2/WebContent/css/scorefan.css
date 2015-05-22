@@ -1,0 +1,11 @@
+.nav,.pagination,.carousel,.panel-title a {
+	cursor: pointer;
+}
+
+  .red{
+        color:red;
+      }
+ 
+ .blue{
+        color:blue;
+      }
