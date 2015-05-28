@@ -3,29 +3,50 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
 
 	$scope.team1 = 'Team 1';
 	$scope.team2 = 'Team 2';
-	$scope.gameLoc = '';	
+	$scope.gameLoc = 'MM2';	
 	$scope.gameDay=new Date();
 	
-	$scope.team1Score=5;
-	$scope.team2Score=7;
-	$scope.inning=4;
-	$scope.inningHalf='top';
-	$scope.topOfInning = false;
+	$scope.team1Score=0;
+	$scope.team2Score=0;
+	
+	$scope.homeTeam='Team 2';
+	$scope.homeTeam1=false;
+	
+	$scope.inning=1;
+	$scope.inningHalf=$scope.team2;
+	$scope.topOfInning = true;
     $scope.bases=0;
-	$scope.outs=2;
-	$scope.edit = true;
+	$scope.outs=0;
 	$scope.firstBase = false;
 	$scope.secondBase = false;
 	$scope.thirdBase = false;
+
+	$scope.showSBMinimal= true;
 	
-	$scope.count=
-		 {
+
+	$scope.changeSBType = function() {
+		if ($scope.scoreBoardType.name == "Minimal") {
+			$scope.showSBMinimal = true;
+		}
+		else {
+			$scope.showSBMinimal = false;
+		}
+	};
+	
+	$scope.edit = true;
+
+	$scope.count= {
 			 balls: 3,
 			 strikes: 2
 		 };
 	 
-	$scope.secondBaseOn = "fa fa-lg fa-square fa-rotate-60";
-	$scope.secondBaseOff = "fa fa-lg fa-square fa-rotate-60 color:yellow";
+    $scope.scoreBoardTypes = [
+             {name:'Regular'},
+             {name:'Minimal'}
+          ];
+                            
+    $scope.scoreBoardType = $scope.scoreBoardTypes[1]; // Minimal
+                            
 	
 /*
  *  Date Picker functions
@@ -43,7 +64,8 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
 
   // Disable weekend selection
   $scope.disabled = function(date, mode) {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+//    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+   return false;
   };
 
   $scope.toggleMin = function() {
@@ -146,11 +168,34 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
     	if ($scope.count.balls <0) {
     		$scope.count.balls = 0;
     	}
-    	if ($scope.count.balls > 4) {
+    	if ($scope.count.balls > 3) {
     		$scope.count.balls = 0;
-    	}
-    		
+    	}    		
     };
+
+    $scope.changeStrikes = function(amount) {
+    	$scope.count.strikes+=amount;
+    	console.log("changing count: Strikes = " + $scope.count.strikes);
+    	if ($scope.count.strikes <0) {
+    		$scope.count.strikes = 0;
+    	}
+    	if ($scope.count.strikes > 2) {
+    		$scope.count.strikes = 0;
+    	}    		
+    };
+
+    $scope.changeOuts = function(amount) {
+    	$scope.outs+=amount;
+    	console.log("changing outs: Outs = " + $scope.outs);
+    	if ($scope.outs <0) {
+    		$scope.outs = 0;
+    	}
+    	if ($scope.outs > 3) {
+    		$scope.outs = 0;
+    	}    		
+    };
+
+    
     
     $scope.toggleBase = function(base) {
     	console.log("Togglebase called with input " + base);
@@ -170,7 +215,7 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
     $scope.changeInning = function(direction) {
     	console.log("changing inning: dir = " + direction + "inning was" + $scope.inning + "top = " + $scope.topOfInning);
     	
-    	if (direction == "up") {
+    	if (direction == 1) {
     		// See if we are just moving to the bottom of the inning or to the next inning
     		if (!$scope.topOfInning) {
     			$scope.inning++;
@@ -182,14 +227,64 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
     		}		
     	}
     	 
+    	if ($scope.inning <= 0) {
+    		$scope.inning = 1;
+    	}
     	// True going up or down
     	$scope.topOfInning = !$scope.topOfInning;
     	clearCount();
     };
       
 
-      
+    $scope.changeVisitorScore = function(amount) {
+     if ($scope.homeTeam == $scope.team1) {
+    	 $scope.team2Score+=amount;
+     }
+     else {
+    	 $scope.team1Score+=amount;    	 
+     };
+    };
+    
+    $scope.changeHomeTeam = function() {
+    	console.log( ($scope.homeTeam == $scope.team1) ? 'Team 1 is home' : 'Team 1 is not home' );
+    	if ($scope.homeTeam == $scope.team1){
+    		$scope.homeTeam1 = true;
+    	}
+    	else {
+    		$scope.homeTeam1 = false;
+    	}
+    };
     
     
+    $scope.changeHomeScore = function(amount) {
+     if ($scope.homeTeam == $scope.team1) {
+    	 $scope.team1Score+=amount;
+     }
+     else {
+    	 $scope.team2Score+=amount;
+     };
+    };
+    
+    $scope.getHomeTeamScore = function() {
+    	if ($scope.homeTeam1) {
+    		return $scope.team1Score;
+    	}
+    	else {
+    		return $scope.team2Score;
+    	}
+    };
+    
+    $scope.getVisitorTeamScore = function() {
+    	if ($scope.homeTeam1) {
+    		return $scope.team2Score;
+    	}
+    	else {
+    		return $scope.team1Score;
+    	}
     	
+    };
+
+    
+    
+    
 });
