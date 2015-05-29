@@ -103,6 +103,7 @@
 	<div id="secondHalf" class="panel panel-primary col-md-6">
 
 		<div id="scoreboxRow" class="row">
+<<<<<<< HEAD
 			<div ng-show="!showSBMinimal" id="scoreboxlargel" class="col-md-12 panel-primary">
 						<div class="panel-heading">Scoreboard</div>	
 						<div id="sbscore" class="col-md-5 panel panel-primary">
@@ -125,6 +126,29 @@
 									<div class="col-md-4">
 										<p class="text-right"><h4>{{team2Score}}</h4></p>
 									</div>
+=======
+			<div id="scoreboxlarge" class="col-md-12 panel-primary">
+						<div class="panel-heading">Scoreboard</div>	
+						<div id="sbscore" class="col-md-5 panel panel-primary">
+							<div class="row">
+								<div class="col-md-8">
+									<p class="text-left">
+									<h4>{{team1}}</h4>
+									</p>
+								</div>
+								<div class="col-md-4">
+									<p class="text-right">
+									<h4>{{team1Score}}</h4>
+									</p>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-8">
+									<p class="text-left">
+									<h4>{{team2}}</h4>
+									</p>
+>>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 								</div>
 							</span>
 							<span ng-switch on="homeTeam1">
@@ -251,11 +275,16 @@
 							</div>
 						</div>
 			</div>
+<<<<<<< HEAD
 			<div ng-show="showSBMinimal" id="scoreboxsmall" class="col-md-12 panel-primary">
+=======
+			<div id="scoreboxsmall" class="col-md-12 panel-primary">
+>>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 						<div class="panel-heading">Scoreboard2</div>	
 						<div id="sbscore" class="col-md-5 panel panel-primary">
 							<div id="bso" class="row">
 								<div class="col-md-4">
+<<<<<<< HEAD
 									<p class="text-right"><h4 class="text-center">Ball</h4></p>
 								</div>
 								<div class="col-md-4">
@@ -263,10 +292,20 @@
 								</div>
 								<div class="col-md-4">
 									<p class="text-right"><h4 class="text-center">Out</h4></p>
+=======
+									<p class="text-right"><h4>Ball</h4></p>
+								</div>
+								<div class="col-md-4">
+									<p class="text-right"><h4>Strike</h4></p>
+								</div>
+								<div class="col-md-4">
+									<p class="text-right"><h4>Out</h4></p>
+>>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 								</div>													
 							</div>
 							<div id="bsonum" class="row">
 								<div class="col-md-4">
+<<<<<<< HEAD
 									<div class="well well-sm">
 										<h4 class="text-center">{{count.balls}}</h4> 
 									</div>
@@ -312,10 +351,32 @@
 
 								<div class="col-md-4">
 									<p class="text-center"><h4 class="text-center">Visitors</h4></p>
+=======
+									<p class="text-right"><h4>{{count.balls}}</h4></p>
+								</div>					
+								<div class="col-md-4">
+									<p class="text-right"><h4>{{count.strikes}}</h4></p>
+								</div>					
+								<div class="col-md-4">
+									<p class="text-right"><h4>{{outs}}</h4></p>
+								</div>					
+							</div>
+							
+							<div id="scoreinning" class="row">
+								<div class="col-md-4">
+									<p class="text-right"><h4>Home</h4></p>
+								</div>
+								<div class="col-md-4">
+									<p class="text-right"><h4>{{inning}}</h4></p>
+								</div>
+								<div class="col-md-4">
+									<p class="text-right"><h4>Visitors</h4></p>
+>>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 								</div>													
 							</div>
 							<div id="scoreinning2" class="row">
 								<div class="col-md-4">
+<<<<<<< HEAD
 									<div class="well well-sm">								
 										<h4 class="text-center">{{ getHomeTeamScore() }}</h4>
 									</div>									
@@ -327,11 +388,123 @@
 									<div class="well well-sm">								
 										<h4 class="text-center">{{ getVisitorTeamScore() }}</h4>
 									</div>
+=======
+									<p class="text-right"><h4>{{count.balls}}</h4></p>
+								</div>					
+								<div class="col-md-4">
+									<p class="text-right"><h4>{{count.strikes}}</h4></p>
+								</div>					
+								<div class="col-md-4">
+									<p class="text-right"><h4>{{outs}}</h4></p>
+>>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 								</div>					
 							</div>
 
 					
 						</div>
+<<<<<<< HEAD
+=======
+						<div id="sbInning" class="col-md-2 panel panel-primary">
+							<div class="col-md-12">
+
+								<span ng-switch="topOfInning">
+									<span ng-switch-when=true>
+												<i id="topOfInning" class="glyphicon glyphicon-triangle-top" style="color:green"></i>	
+									</span>
+									<span ng-switch-when=false>
+												<i id="topOfInning" class="glyphicon glyphicon-triangle-top" style="color:black"></i>	
+									</span>									
+								</span>
+
+								<p class="text-center">
+								<h4>{{inning}}</h4>
+								</p>
+
+								<span ng-switch="topOfInning">
+									<span ng-switch-when=false>
+												<i id="topOfInning" class="glyphicon glyphicon-triangle-bottom" style="color:green"></i>	
+									</span>
+									<span ng-switch-when=true>
+												<i id="topOfInning" class="glyphicon glyphicon-triangle-bottom" style="color:black"></i>	
+									</span>									
+								</span>
+
+							</div>
+						</div>
+						<div id="sbBasesOuts" class="col-md-3 panel panel-primary">
+								<div ng-switch="secondBase">
+									<div ng-switch-when=true>
+											<p class="text-center">
+												<i id="secondBase" class="fa fa-lg fa-square fa-rotate-60" style="color:green"></i>	
+												</p>
+									</div>
+									<div ng-switch-when=false>
+											<p class="text-center">
+												<i id="secondBase" class="fa fa-lg fa-square fa-rotate-60" style="color:black"></i>	
+											</p>
+									</div>									
+								</div>
+								<span class="text-center">
+								<p>
+								<span ng-switch="thirdBase">
+									<span ng-switch-when=true>
+												<i id="thirdBase" class="fa fa-lg fa-square fa-rotate-60" style="color:green"></i>	
+									</span>
+									<span ng-switch-when=false>
+												<i id="thirdBase" class="fa fa-lg fa-square fa-rotate-60" style="color:black"></i>	
+									</span>									
+								</span>
+								&nbsp &nbsp &nbsp &nbsp								
+								<span ng-switch="firstBase">
+									<span ng-switch-when=true>
+												<i id="firstBase" class="fa fa-lg fa-square fa-rotate-60" style="color:green"></i>	
+									</span>
+									<span ng-switch-when=false>
+												<i id="firstBase" class="fa fa-lg fa-square fa-rotate-60" style="color:black"></i>	
+									</span>									
+								</span>
+							    </p>
+								</span>								
+
+								<!--  Outs -->
+								<span class="text-center">
+									<p>
+										<span ng-switch="outs">
+											<span ng-switch-when='0'>
+														<i id="firstOut" class="fa fa-lg fa-circle" style="color:black"></i>
+														<i id="secondOut" class="fa fa-lg fa-circle" style="color:black"></i>
+														<i id="thirdOut" class="fa fa-lg fa-circle" style="color:black"></i>	
+											</span>
+											<span ng-switch-when='1'>	
+														<i id="firstOut" class="fa fa-lg fa-circle" style="color:red"></i>
+														<i id="secondOut" class="fa fa-lg fa-circle" style="color:black"></i>
+														<i id="thirdOut" class="fa fa-lg fa-circle" style="color:black"></i>	
+											</span>									
+											<span ng-switch-when='2'>	
+														<i id="firstOut" class="fa fa-lg fa-circle" style="color:red"></i>
+														<i id="secondOut" class="fa fa-lg fa-circle" style="color:red"></i>
+														<i id="thirdOut" class="fa fa-lg fa-circle" style="color:black"></i>	
+											</span>									
+											<span ng-switch-when='3'>	
+														<i id="firstOut" class="fa fa-lg fa-circle" style="color:red"></i>
+														<i id="secondOut" class="fa fa-lg fa-circle" style="color:red"></i>
+														<i id="thirdOut" class="fa fa-lg fa-circle" style="color:red"></i>	
+											</span>									
+										</span>
+								    </p>
+								</span>								
+
+						</div>
+						<div id="sbCount" class="col-md-2 panel panel-primary">
+							<div>
+								<br>
+								<p class="text-center">
+									<h4><small><b>&nbsp &nbsp{{count.balls + " - " + count.strikes}}</b></small></h4>
+								</p>
+								<br>
+							</div>
+						</div>
+>>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 			</div>
 
 		</div>	
@@ -356,6 +529,7 @@
 						<p></p>
 						<div id="counters" class="row">
 
+<<<<<<< HEAD
 						<div id="homeCounter" class="col-md-2 panel panel-primary">
 							<div class="col-md-12">
 								<button ng-click="changeHomeScore(1)" id=homeUpInput" class="glyphicon glyphicon-triangle-top"></button>
@@ -372,6 +546,24 @@
 								<h4>Visitor</h4>
 								</p>
 								<button ng-click="changeVisitorScore(-1)" id=visitorDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+=======
+						<div id="visitorCounter" class="col-md-2 panel panel-primary">
+							<div class="col-md-12">
+								<button ng-click="changeVisitorScore(1)" id=visitorUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<p class="text-center">
+								<h4>Visitor</h4>
+								</p>
+								<button ng-click="changeVisitorScore(-1)" id=visitorDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+							</div>
+						</div>
+						<div id="homeCounter" class="col-md-2 panel panel-primary">
+							<div class="col-md-12">
+								<button ng-click="changeHomeScore(1)" id=homeUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<p class="text-center">
+								<h4>Home</h4>
+								</p>
+								<button ng-click="changeHomeScore(-1)" id=homeDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+>>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 							</div>
 						</div>
 		
