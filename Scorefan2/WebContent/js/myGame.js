@@ -1,6 +1,20 @@
 angular.module('myGame', ['ui.bootstrap']);
 angular.module('myGame').controller('gameCtrl', function($scope) {
 
+	// Things to add:
+	// Clearcount button
+	// New game button
+	// Notification options
+	// Change settings to be menu or slide away
+	// Scoreboard cleanup
+	//   Alignment
+	//   Graphics
+	//   Counter alignment
+	// Make counters configurable based on scoreboard type
+	// Move Datepicker to other file
+	// add time picker
+	
+	
 	$scope.team1 = 'Team 1';
 	$scope.team2 = 'Team 2';
 	$scope.gameLoc = 'MM2';	
@@ -8,19 +22,10 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
 	
 	$scope.team1Score=0;
 	$scope.team2Score=0;
-<<<<<<< HEAD
-	
 	$scope.homeTeam='Team 2';
-	$scope.homeTeam1=false;
-	
-	$scope.inning=1;
-	$scope.inningHalf=$scope.team2;
-=======
-	$scope.homeTeam='Team 2'
 	
 	$scope.inning=1;
 	$scope.inningHalf='top';
->>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 	$scope.topOfInning = true;
     $scope.bases=0;
 	$scope.outs=0;
@@ -28,9 +33,8 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
 	$scope.secondBase = false;
 	$scope.thirdBase = false;
 
-<<<<<<< HEAD
 	$scope.showSBMinimal= true;
-	
+	$scope.homeTeam1 = false;
 
 	$scope.changeSBType = function() {
 		if ($scope.scoreBoardType.name == "Minimal") {
@@ -39,17 +43,12 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
 		else {
 			$scope.showSBMinimal = false;
 		}
+
 	};
 	
 	$scope.edit = true;
 
 	$scope.count= {
-=======
-	$scope.edit = true;
-
-	$scope.count=
-		 {
->>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 			 balls: 3,
 			 strikes: 2
 		 };
@@ -251,18 +250,13 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
       
 
     $scope.changeVisitorScore = function(amount) {
-<<<<<<< HEAD
      if ($scope.homeTeam == $scope.team1) {
-=======
-     if ($scope.homeTeam == "Team 1") {
->>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
     	 $scope.team2Score+=amount;
      }
      else {
     	 $scope.team1Score+=amount;    	 
      };
     };
-<<<<<<< HEAD
     
     $scope.changeHomeTeam = function() {
     	console.log( ($scope.homeTeam == $scope.team1) ? 'Team 1 is home' : 'Team 1 is not home' );
@@ -277,12 +271,6 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
     
     $scope.changeHomeScore = function(amount) {
      if ($scope.homeTeam == $scope.team1) {
-=======
-    
-
-    $scope.changeHomeScore = function(amount) {
-     if ($scope.homeTeam == "Team 1") {
->>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
     	 $scope.team1Score+=amount;
      }
      else {
@@ -290,7 +278,6 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
      };
     };
     
-<<<<<<< HEAD
     $scope.getHomeTeamScore = function() {
     	if ($scope.homeTeam1) {
     		return $scope.team1Score;
@@ -309,10 +296,6 @@ angular.module('myGame').controller('gameCtrl', function($scope) {
     	}
     	
     };
-
     
     
-    
-=======
->>>>>>> 613e4fcfc77c182fff49673a3163a2784cb99ac2
 });
