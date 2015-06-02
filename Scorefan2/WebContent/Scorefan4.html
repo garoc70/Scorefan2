@@ -15,7 +15,7 @@
 <script src="js/scorefan.js"></script>
 <script src="js/myGame.js"></script>
 
-<body ng-app="myGame" ng-controller="gameCtrl">
+<body ng-app="myGame" ng-controller="gameCtrl">contro
 
 	<div id="gameSettings" class="panel panel-default col-md-4">
 		<div class="panel-heading">Game Settings</div>
@@ -103,7 +103,7 @@
 	<div id="secondHalf" class="panel panel-primary col-md-6">
 
 		<div id="scoreboxRow" class="row">
-			<div ng-show="!showSBMinimal" id="scoreboxlargel" class="col-md-12 panel-primary">
+			<div ng-show="!showSBMinimal" id="scoreboxLarge" class="col-md-12 panel-primary">
 						<div class="panel-heading">Scoreboard</div>	
 						<div id="sbscore" class="col-md-5 panel panel-primary">
 							<span ng-switch on="homeTeam1">
@@ -252,7 +252,7 @@
 							</div>
 						</div>
 			</div>
-			<div ng-show="showSBMinimal" id="scoreboxsmall" class="col-md-12 panel-primary">
+			<div ng-show="showSBMinimal" id="scoreboxsMinimal" class="col-md-12 panel-primary">
 						<div class="panel-heading">Scoreboard2</div>	
 						<div id="sbscore" class="col-md-5 panel panel-primary">
 							<div id="bso" class="row">
@@ -292,14 +292,14 @@
 								</div>
 								<div class="col-md-4">
 									<div class="well well-sm">
-										<div class="col-sm-1">
+										<div class="col-sm-1 "text-left">
 										<span ng-switch="topOfInning">
-											<span ng-switch-when=true><i id="topOfInning" class="fa fa-sm fa-circle" style="color:green"></i></span>
+											<span ng-switch-when=true> <i id="topOfInning" class="fa fa-sm fa-circle" style="color:green"></i></span>
 											<span ng-switch-when=false><i id="topOfInning" class="fa fa-sm fa-circle" style="color:grey"></i></span>
 										</span>
 										<span ng-switch="topOfInning">
-											<span ng-switch-when=false><i id="topOfInning" class="fa fa-sm fa-circle" style="color:green"></i><span>
-											<span ng-switch-when=true><i id="topOfInning" class="fa fa-sm fa-circle" style="color:grey"></i></span>									
+											<span ng-switch-when=false> <i id="bottomOfInning" class="fa fa-sm fa-circle" style="color:green"></i></span>
+											<span ng-switch-when=true><i id="bottomOfInning" class="fa fa-sm fa-circle" style="color:grey"></i></span>
 										</span>
 										</div>
 										<h4 class="text-center" >{{inning}}</h4>
@@ -333,9 +333,7 @@
 
 		</div>	
 		
-		<!--  @Todo - Update code to make the order of the counters be configurable by the scorboard being displayed. 
-		              In some cases
-		  -->
+
 		
 		<div id="userControlRow" class="row">
 				<div id="userControls" class=" col-md-12 panel-primary">
@@ -360,60 +358,60 @@
 
 						<div id="homeCounter" class="col-md-2 panel panel-primary">
 							<div class="col-md-12">
-								<button ng-click="changeHomeScore(1)" id=homeUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<button ng-click="changeHomeScore(1)" id="homeUpInput" class="glyphicon glyphicon-triangle-top"></button>
 								<p class="text-center">
 								<h4>Home</h4>
 								</p>
-								<button ng-click="changeHomeScore(-1)" id=homeDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+								<button ng-click="changeHomeScore(-1)" id="homeDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
 							</div>
 						</div>
 						<div id="visitorCounter" class="col-md-2 panel panel-primary">
 							<div class="col-md-12">
-								<button ng-click="changeVisitorScore(1)" id=visitorUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<button ng-click="changeVisitorScore(1)" id="visitorUpInput" class="glyphicon glyphicon-triangle-top"></button>
 								<p class="text-center">
 								<h4>Visitor</h4>
 								</p>
-								<button ng-click="changeVisitorScore(-1)" id=visitorDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+								<button ng-click="changeVisitorScore(-1)" id="visitorDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
 							</div>
 						</div>
 		
 									
 						<div id="inningCounter" class="col-md-2 panel panel-primary">
 							<div class="col-md-12">
-								<button ng-click="changeInning(1)" id=inningUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<button ng-click="changeInning(1)" id="inningUpInput" class="glyphicon glyphicon-triangle-top"></button>
 								<p class="text-center">
 								<h4>Inning</h4>
 								</p>
-								<button ng-click="changeInning(-1)" id=inningDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+								<button ng-click="changeInning(-1)" id="inningDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
 							</div>
 						</div>		
 							
 						<div id="outCounter" class="col-md-2 panel panel-primary">
 							<div class="col-md-12">
-								<button ng-click="changeOuts(1)" id=outUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<button ng-click="changeOuts(1)" id="outUpInput" class="glyphicon glyphicon-triangle-top"></button>
 								<p class="text-center">
 								<h4>Outs</h4>
 								</p>
-								<button ng-click="changeOuts(-1)" id=outDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+								<button ng-click="changeOuts(-1)" id="outDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
 							</div>
 						</div>	
 
 						<div id="ballCounter" class="col-md-2 panel panel-primary">
 							<div class="col-md-12">
-								<button ng-click="changeBalls(1)" id=ballUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<button ng-click="changeBalls(1)" id="ballUpInput" class="glyphicon glyphicon-triangle-top"></button>
 								<p class="text-center">
 								<h4>Balls</h4>
 								</p>
-								<button ng-click="changeBalls(-1)" id=ballDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+								<button ng-click="changeBalls(-1)" id="ballDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
 							</div>
 						</div>			
 						<div id="strikeCounter" class="col-md-2 panel panel-primary">
 							<div class="col-md-12">
-								<button ng-click="changeStrikes(1)" id=strikeUpInput" class="glyphicon glyphicon-triangle-top"></button>
+								<button ng-click="changeStrikes(1)" id="strikeUpInput" class="glyphicon glyphicon-triangle-top"></button>
 								<p class="text-center">
 								<h4>Strikes</h4>
 								</p>
-								<button ng-click="changeStrikes(-1)" id=strikeDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
+								<button ng-click="changeStrikes(-1)" id="strikeDownInput" class="glyphicon glyphicon-triangle-bottom"></button>
 							</div>
 						</div>
 						</div>
